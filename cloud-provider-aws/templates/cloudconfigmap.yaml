@@ -1,0 +1,9 @@
+{{- if .Values.cloudConfig }}
+apiVersion: v1
+data:
+  cloudconfig.cfg: |-
+    {{ .Values.cloudConfig  }}
+kind: ConfigMap
+metadata:
+  name: aws-cloud-config
+{{- end }}
